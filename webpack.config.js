@@ -34,6 +34,14 @@ module.exports = {
                 use: ['style-loader', 'css-loader']
             },
             {
+                test: /\.css$/i,
+                use: ['raw-loader']
+            },
+            {
+                test: /\.html$/i,
+                use: ['raw-loader']
+            },
+            {
                 test: /\.ts?$/,
                 use: 'ts-loader',
                 exclude: /node_modules/,
@@ -63,5 +71,8 @@ module.exports = {
             filename: 'index.html',
             template: 'src/template.html'
         })
-    ]
+    ],
+    optimization: {
+        minimize: true
+    }
 }
